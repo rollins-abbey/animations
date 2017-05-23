@@ -1,0 +1,46 @@
+
+.flip-card {
+    width: 240px; 
+    height: 200px; 
+    margin: 10px; 
+    padding: 10px 10px;
+    float: left; 
+}
+.flip-card > .front {
+	position: absolute;
+	-webkit-transform: perspective(600px) rotateY(0deg);
+	transform: perspective(600px) rotateY(0deg);
+	background: #f2db30; 
+    width: 240px; 
+    height: 200px; 
+    border-radius: 7px;  
+    -webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+
+.flip-card > .back {
+	position: absolute;
+	-webkit-transform: perspective(600px) rotateY(180deg);
+	transform: perspective(600px) rotateY(180deg);
+	background: black;
+    color: white;
+    width:240px; 
+    height:200px; 
+    border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+
+.flip-card:hover > .front{
+	-webkit-transform: perspective( 600px ) rotateY( -180deg );
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+
+.flip-card:hover > .back{
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+}
